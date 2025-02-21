@@ -17,7 +17,7 @@ const user_router = require("./routes/user_routes")
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("Login Api page")
+    res.send("Login Api page hi I am Yash Gojariya my Project is this not runnig properly")
 })
 
 app.use("/register", user_router);
