@@ -5,10 +5,10 @@ const corsConfig = {
     credential: true,
     methods: ["GET", "POST"]
 };
-app.options("", cors(corsConfig))
+let app = express();
 app.use(cors(corsConfig))
 require("./db/db")
-let app = express();
+app.options("", cors(corsConfig))
 
 const PORT = process.env.PORT || 7000;
 const user = require("./models/user_schema");
