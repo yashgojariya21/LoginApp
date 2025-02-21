@@ -23,9 +23,9 @@ app.get("/data", (req, res) => {
 app.use("/register", user_router);
 
 
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
     try {
-        const getData = user.find({});
+        const getData = await user.find({});
         res.status(200).json({
             message: "Data fetched successfully",
             status: 200,
