@@ -1,6 +1,6 @@
 const user = require("../models/user_schema");
 
-const login = async (req, res) => {
+const register = async (req, res) => {
 
 
     const { first_name, last_name, email, password, confirm_password } = req.body;
@@ -68,5 +68,5 @@ const data = async (req, res) => {
     }
 }
 
-module.exports = { login, data };
+module.exports = { register, data };
 
