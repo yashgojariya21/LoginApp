@@ -1,10 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const { register, data } = require("../controller/user_controller")
+const register = require("../controller/user_controller");
 
-router.route("/").post(register);
-router.route("/data").get(data);
-
+router.post("/", register.register); // ✅ Access function properly
 
 module.exports = router;

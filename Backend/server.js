@@ -13,6 +13,7 @@ app.options("", cors(corsConfig))
 const PORT = process.env.PORT || 7000;
 const user = require("./models/user_schema");
 const user_router = require("./routes/user_routes")
+const login_router = require("./routes/login_router")
 
 app.use(express.json());
 
@@ -21,6 +22,7 @@ app.get("/data", (req, res) => {
 })
 
 app.use("/register", user_router);
+app.use("/login", login_router)
 
 
 app.get("/", async (req, res) => {
@@ -33,7 +35,6 @@ app.get("/", async (req, res) => {
         });
     } catch (error) {
         console.log(error);
-
     }
 })
 
