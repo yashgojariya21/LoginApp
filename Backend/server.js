@@ -1,4 +1,12 @@
 const express = require("express");
+const cors = require("cors");
+const corsConfig = {
+    origin: "*",
+    credential: true,
+    methods: ["GET", "POST"]
+};
+app.options("", cors(corsConfig))
+app.use(cors(corsConfig))
 require("./db/db")
 let app = express();
 
@@ -15,7 +23,7 @@ app.get("/", (req, res) => {
 app.use("/register", user_router);
 
 
-app.get("/api/v1/data", async (req, res) => {
+app.get("/data", async (req, res) => {
     try {
         const getData = await user.find({});
         res.status(200).json({
