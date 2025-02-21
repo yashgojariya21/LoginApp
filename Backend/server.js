@@ -16,14 +16,14 @@ const user_router = require("./routes/user_routes")
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get("/data", (req, res) => {
     res.send("Login Api page hi I am Yash Gojariya my Project is this not runnig properly")
 })
 
 app.use("/register", user_router);
 
 
-app.get("/data", async (req, res) => {
+app.get("/", async (req, res) => {
     try {
         const getData = await user.find({});
         res.status(200).json({
