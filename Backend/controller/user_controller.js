@@ -74,10 +74,10 @@ const login = async (req, res) => {
         return res.status(400).json({
             message: "Missing Data",
             status: 400,
-            error: [
-                { id: "email", message: "Email is required" },
-                { id: "password", message: "Password is required" }
-            ]
+            error: {
+                message: "All fields are required"
+            }
+
         });
     }
 
