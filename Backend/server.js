@@ -17,15 +17,15 @@ const login_router = require("./routes/login_router")
 
 app.use(express.json());
 
-app.get("/data", (req, res) => {
-    res.send("Login Api page hi I am Yash Gojariya my Project is this not runnig properly")
+app.get("/", (req, res) => {
+    res.send("Home Page")
 })
 
 app.use("/register", user_router);
 app.use("/login", login_router)
 
 
-app.get("/", async (req, res) => {
+app.get("/data", async (req, res) => {
     try {
         const getData = await user.find({});
         res.status(200).json({
